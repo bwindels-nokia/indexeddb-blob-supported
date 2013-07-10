@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+		<script src="idb-blob-supported.js"></script>
+		<script>
+			isStoringBlobsInIDBSupported(function(err, supported) {
+				if(err) {
+					return console.log(err);
+				}
+				var h1 = document.createElement('h1');
+				h1.innerHTML = 'Storing blobs in IndexedDB is ' + (supported ? '' : 'NOT ') + ' supported';
+				h1.style.color = supported ? 'green' : 'red';
+				document.body.appendChild(h1);
+			});
+		</script>
+	</body>
+</html>
